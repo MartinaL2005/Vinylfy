@@ -5,19 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vinylfy</title>
-    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 
 <body>
-    <div class="vinyl-container">
-        <img id="album-cover" src="" alt="Album Cover" class="album-cover">
-        <div class="vinyl-wrapper">
-            <img src="../images/vinyl.png" class="vinyl" id="vinyl">
-        </div>
-        <p id="song-info">Loading song...</p>
+    <div class="container">
+        <h1>Now Playing</h1>
+        <p id="song-info">Loading...</p>
+        <img id="album-cover" src="" alt="Album Cover">
+        <div class="vinyl-spinner" onclick="toggleVinylPosition()"></div>
     </div>
 
-    <script src="static/js/script.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 
 </html>
