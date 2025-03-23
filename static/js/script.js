@@ -30,7 +30,6 @@ function toggleVinylPosition() {
         albumCover.style.zIndex = '1'; //Moves album cover behind 
         vinyl.style.zIndex = '2'; //Brings vinyl to the top
     } else {
-
         vinyl.style.left = '20%';
         vinyl.style.animationPlayState = 'paused'; // Stop spinning when fully outside
         albumCover.style.zIndex = '2'; //Bring album cover to the top

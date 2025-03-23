@@ -1,18 +1,19 @@
-from flask import Flask, jsonify, render_template
-from flask_cors import CORS
+from flask import Flask, render_template, jsonify
 from spotify_auth import get_current_song
 
 app = Flask(__name__)
-CORS(app)
 
 @app.route('/')
-def home():
+def index():
     return render_template('index.html')
 
 @app.route('/song')
 def song():
-    song, artist, cover = get_current_song()
-    return jsonify({"song": song, "artist": artist, "cover": cover})
+    try:
+        song, artist, album_cover_url = get_current_song()
+        return jsonify({'song': song, 'artist': artist, 'cover': album_cover_url})
+    except:
+        return jsonify({'error': 'No song currently playing'})
 
 if __name__ == '__main__':
     app.run(debug=True)
