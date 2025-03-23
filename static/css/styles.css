@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #181818;
+    color: white;
+    overflow: hidden;
+}
+
+
+#album-cover {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+    position: absolute;
+    left: 30%;
+    transform: translateX(-50%);
+    top: 130px;
+    z-index: 2;
+    transition: z-index 0.5s ease;
+    cursor: pointer;
+}
+
+.vinyl-spinner {
+    width: 550px;
+    height: 550px;
+    background: url('../images/vinyl.png') no-repeat center;
+    background-size: cover;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    top: 120px;
+    left: 40%;
+    transform: translateX(-40%);
+    transition: left 1s ease, z-index 0.5s ease;
+    cursor: pointer;
+    animation: spin 5s linear infinite;
+    animation-play-state: paused;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
